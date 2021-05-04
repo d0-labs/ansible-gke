@@ -1,8 +1,9 @@
 FROM python:3.9.4-slim-buster
 
-# Install curl (required for gcloud CLI install)
+# Install curl (required for gcloud CLI install) and envsubst
 RUN apt-get update && apt-get install -y \
     curl \
+    gettext-base \
   && rm -rf /var/lib/apt/lists/*
 
 # Install gcloud (https://stackoverflow.com/a/53501128)
