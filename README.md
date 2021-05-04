@@ -52,11 +52,10 @@ This playbook will create a GKE cluster and node pool, and update the *container
 From within the container instance run the following command:
 
 ```bash
-ansible-playbook -vv --extra-vars cluster_state=present ansible/playbook.yml
+./startup.sh && ansible-playbook -vv --extra-vars cluster_state=present ansible/playbook.yml
 ```
 
 To delete the cluster and node pool, run the following command from within the container instance:
 
 ```bash
-ansible-playbook -vv --extra-vars cluster_state=absent ansible/playbook.yml
-```
+./startup.sh && ansible-playbook -vv --extra-vars cluster_state=absent ansible/playbook.yml
