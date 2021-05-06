@@ -34,14 +34,13 @@ This will replace the values you set above with your own GCP project's values in
 docker build -t docker-ansible:1.0.0 docker
 ```
 
-### 2- Start the container
+### 2- Start the container instance
 
-Run the Docker image. Here, we're mapping the `ansible` folder on our host machine to the `/workdir/ansible` folder in the container instance.
+Run the container instance. Here, we're mapping the `ansible` folder on our host machine to the `/workdir/ansible` folder in the container instance.
 
 ```bash
-export workdir=(pwd) && \
 docker run -it --rm \
-    -v $workdir/ansible:/workdir/ansible \
+    -v $(pwd)/ansible:/workdir/ansible \
     docker-ansible:1.0.0 /bin/bash
 ```
 
