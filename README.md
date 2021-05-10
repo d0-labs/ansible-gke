@@ -12,6 +12,11 @@ If you'd like to skip the tutorial altogether, you can use the quickstart guide 
 
 For your convenience, I've created a `Dockerfile` with `Ansible` and the `gcloud` CLI installed.
 
+### Pre-requisites
+* A Google Cloud project
+* A Google Cloud service account
+* [Docker](https://www.docker.com) installed on your local machine
+
 ### 1- Set up project values
 
 You must replace the following values in `setup.sh`:
