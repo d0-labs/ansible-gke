@@ -63,3 +63,25 @@ To delete the cluster and node pool, run the following command from within the c
 
 ```bash
 ./startup.sh && ansible-playbook -vv --extra-vars cluster_state=absent ansible/playbook.yml
+```
+
+### 4- Deploy the sample app
+
+This will create a:
+* Namespace
+* Deployment
+* Service
+
+```bash
+kubectl apply -f manifest/deployment.yml
+```
+
+Get the LoadBalancer IP:
+
+```bash
+LOAD_BALANCER_IP=$(kubectl get -n foo service service -o "go-template={{range .status.loadBalancer.ingress}}{{or .ip .hostname}}{{end}}")
+```
+
+Go to your browser and enter the following IP:
+
+`http://$LOAD_BALANCER_IP`
