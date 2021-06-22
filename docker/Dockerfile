@@ -25,7 +25,8 @@ COPY --from=lachlanevenson/k8s-kubectl:v1.10.3 /usr/local/bin/kubectl /usr/local
 RUN ansible-galaxy collection install google.cloud
 
 ENV WORKDIR="/workdir"
-RUN mkdir -p ${WORKDIR}/ansible
+RUN mkdir -p ${WORKDIR}/ansible \
+  && mkdir -p ${WORKDIR}/manifest
 WORKDIR ${WORKDIR}
 
 COPY startup.sh .

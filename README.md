@@ -46,6 +46,7 @@ Run the container instance. Here, we're mapping the `ansible` folder on our host
 ```bash
 docker run -it --rm \
     -v $(pwd)/ansible:/workdir/ansible \
+    -v $(pwd)/manifest:/workdir/manifest \
     docker-ansible:1.0.0 /bin/bash
 ```
 
