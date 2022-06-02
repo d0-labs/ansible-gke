@@ -22,7 +22,7 @@ For your convenience, I've created a `Dockerfile` with `Ansible` and the `gcloud
 You must replace the following values in `setup.sh`:
 
 * `<gcp_project_name>`: Your own GCP project name
-* `<service_account_name>`: Name of your GCP service account
+* `<service_account_name>`: Name of your [GCP service account](https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount)
 * `<service_account_private_key_json>`: Fully-qualified name of your Google Service Account's private key JSON file (e.g. `/home/myuser/my-sa.json` or `./my-sa.json`)
 
 Next, run the following script:
@@ -86,3 +86,9 @@ LOAD_BALANCER_IP=$(kubectl get -n foo service service -o "go-template={{range .s
 Go to your browser and enter the following IP:
 
 `http://$LOAD_BALANCER_IP`
+
+## References
+
+* [How to Create a gCloud service account](https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount)
+* [Ansible Ref: Create GKE Cluster Module](https://docs.ansible.com/ansible/latest/collections/google/cloud/gcp_container_cluster_module.html)
+* [Ansible Ref: Create GKE Node Pool Module](https://docs.ansible.com/ansible/latest/collections/google/cloud/gcp_container_node_pool_module.html#ansible-collections-google-cloud-gcp-container-node-pool-module)

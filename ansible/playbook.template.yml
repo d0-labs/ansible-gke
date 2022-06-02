@@ -13,6 +13,8 @@
     gcp_cred_file: ${SERVICE_ACCOUNT_PRIVATE_KEY_JSON}
     gcp_zone: us-central1-a
     gcp_region: us-central1
+    network: ${GKE_NETWORK}
+    subnet: ${GKE_SUBNET}
 
   roles:
     - gke-test
